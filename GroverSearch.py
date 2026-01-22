@@ -3,38 +3,38 @@ from qiskit import QuantumCircuit, transpile
 from qiskit_aer import AerSimulator
 from qiskit.visualization import plot_histogram
 with st.sidebar:
-    st.title("🧠 Grover’s Algorithm - Learn It")
+    st.title("Grover’s Algorithm - Learn It")
     
-    st.subheader("🔮 What is it?")
+    st.subheader("What is it?")
     st.markdown("""
     Grover’s Algorithm is a **quantum search algorithm** that finds a specific item in an unsorted list **faster** than classical search.
 
-    - Classical Search: 🔍 ~N steps  
-    - Quantum Grover: ⚛️ ~√N steps  
+    - Classical Search:  ~N steps  
+    - Quantum Grover:  ~√N steps  
     """)
 
-    st.subheader("🔢 Real-life Example:")
+    st.subheader("Real-life Example:")
     st.markdown("""
     Suppose you have 8 lockers, and **only 1 has the prize**.  
     - Classical method checks 1 by 1.  
     - Grover’s quantum magic can find it in just 2 tries.
     """)
 
-    st.subheader("🌀 How It Works (Simplified):")
+    st.subheader(" How It Works (Simplified):")
     st.markdown("""
-    1. **Create Superposition** – All lockers opened at once 🔓  
-    2. **Oracle** – Marks the right locker 🟥  
-    3. **Amplify** – Increases chance for marked one 📈  
-    4. **Measure** – Most likely, the correct answer 🎯  
+    1. **Create Superposition** – All lockers opened at once  
+    2. **Oracle** – Marks the right locker 
+    3. **Amplify** – Increases chance for marked one 
+    4. **Measure** – Most likely, the correct answer   
     """)
 
-    st.subheader("👾 Your Role Here")
+    st.subheader(" Your Role Here")
     st.markdown("""
     You give a binary string (like `101`) = the target.  
     Grover builds a quantum circuit to **find it**.
     """)
 
-    st.subheader("⚡ Why It Matters")
+    st.subheader(" Why It Matters")
     st.markdown("""
     - Works on **unsorted data**
     - Powerful for **security, AI, optimization**
@@ -42,10 +42,10 @@ with st.sidebar:
     """)
 
     st.markdown("---")
-    st.markdown("🧑‍💻 Built using Qiskit + Streamlit")
+    st.markdown("Built using Qiskit + Streamlit")
 
 # Title
-st.title("⚛️ Grover's Algorithm - Custom Oracle")
+st.title("Grover's Algorithm - Custom Oracle")
 
 # Input binary string
 target_binary = st.text_input("Enter target binary string (e.g. 101):", "101")
@@ -101,15 +101,16 @@ result = simulator.run(compiled_circuit).result()
 counts = result.get_counts()
 
 # Show circuit
-st.subheader("🔁 Grover Circuit")
+st.subheader("Grover Circuit")
 st.text(qc.draw(output='text'))
 
 
 # Show result
-st.subheader("📊 Measurement Histogram")
+st.subheader("Measurement Histogram")
 fig = plot_histogram(counts, bar_labels=False, figsize=(8, 5))
 st.pyplot(fig)
 
 # Display raw counts
-st.subheader("🔢 Raw Output Counts")
+st.subheader("Raw Output Counts")
 st.json(counts)
+
